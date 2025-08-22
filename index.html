@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link href="./index.css" rel="stylesheet"/>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+<section class="table">
+    <div class="table__filters">
+        <div class="table__left">
+            <button class="table__button">
+                <img src="./images/filter.svg" alt="filter"/>
+                <span>Filters</span>
+            </button>
+            <button class="table__button">
+                <img src="./images/plus.svg" alt="add"/>
+                <span>Add User</span>
+            </button>
+            <p class="table__selector">1 row selected</p>
+        </div>
+        <div class="table__search">
+            <img src="./images/search.svg" alt="search"/>
+            <input type="text" placeholder="Search"/>
+        </div>
+    </div>
+
+    <div class="table__body">
+        <div class="table__heading">
+            <div class="table__column column-sm">
+                <input type="checkbox"/>
+            </div>
+            <div class="table__column column-big">
+                <p>Learners</p>
+                <img src="./images/arrow.svg" alt="arrow">
+            </div>
+            <div class="table__column column-md">
+                <p>Language</p>
+                <img src="./images/arrow.svg" alt="arrow">
+            </div>
+            <div class="table__column column-md">
+                <p>Occupation</p>
+                <img src="./images/arrow.svg" alt="arrow">
+            </div>
+            <div class="table__column column-md">
+                <p>Objective</p>
+                <img src="./images/arrow.svg" alt="arrow">
+            </div>
+
+            <div class="table__column column-md">
+                <p>Subscription</p>
+                <img src="./images/arrow.svg" alt="arrow">
+            </div>
+            <div class="table__column column-big"></div>
+        </div>
+
+        <div class="table__content">
+            <div class="table__row">
+                <div class="table__column column-sm">
+                    <input type="checkbox"/>
+                </div>
+                <div class="table__column column-big">
+                    <img src="/images/avatarr.svg" alt="avatar">
+                    <div class="table__column column-info">
+                        <div class="column-info-names">
+                            <p>John Doe</p>
+                            <img src="./images/flag.svg" alt="flag">
+                        </div>
+                        <p>john.doe@gmail.com</p>
+                    </div>
+                </div>
+                <div class="table__column column-md">
+                    <p>English</p>
+                </div>
+                <div class="table__column column-md">
+                    <p>Freelance</p>
+                </div>
+                <div class="table__column column-md">
+                    <p>Fluent</p>
+                </div>
+                <div class="table__column column-md">
+                    <p>Free Trial</p>
+                </div>
+                <div class="table__column column-big">
+                    <div class="table__column action-item">
+                        <img src="/images/trash.svg" alt="trash">
+                        <img src="/images/edit.png" alt="edit">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table__footer pagination">
+            <button class="pagination__button">
+                <span>Previous</span>
+            </button>
+            <p class="pagination__text">Page 1 of 10</p>
+            <button class="pagination__button">
+                <span>Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+</body>
+</html>
