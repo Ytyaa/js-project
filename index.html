@@ -1,107 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="./index.css" rel="stylesheet"/>
+    <link href="reset.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
+
     <script src="./script.js" defer></script>
-</head>
-<body>
-<section class="table">
-    <div class="table__filters">
+  </head>
+  <body>
+    <section class="table">
+      <div class="table__filters">
         <div class="table__left">
-            <button class="table__button">
-                <img src="./images/filter.svg" alt="filter"/>
-                <span>Filters</span>
-            </button>
-            <button class="table__button">
-                <img src="./images/plus.svg" alt="add"/>
-                <span>Add User</span>
-            </button>
-            <p class="table__selector">1 row selected</p>
+          <button data-modal="mdlFilter" class="button-modal table__button">
+            <img src="/images/filter.svg" alt="filter" />
+            <span>Filters</span>
+          </button>
+          <button
+            data-modal="userModal"
+            class="button-modal table__button table-action"
+          >
+            <img src="/images/plus.svg" alt="add" />
+            <span>Add User</span>
+          </button>
+          <p class="table__selector">1 row selected</p>
         </div>
         <div class="table__search">
-            <img src="./images/search.svg" alt="search"/>
-            <input type="text" placeholder="Search"/>
+          <img src="/images/search.svg" alt="search" />
+          <input type="text" placeholder="Search" />
         </div>
-    </div>
+      </div>
 
-    <div class="table__body">
+      <div class="table__body">
         <div class="table__heading">
-            <div class="table__column column-sm">
-                <input type="checkbox"/>
-            </div>
-            <div class="table__column column-big">
-                <p>Learners</p>
-                <img src="./images/arrow.svg" alt="arrow">
-            </div>
-            <div class="table__column column-md">
-                <p>Language</p>
-                <img src="./images/arrow.svg" alt="arrow">
-            </div>
-            <div class="table__column column-md">
-                <p>Occupation</p>
-                <img src="./images/arrow.svg" alt="arrow">
-            </div>
-            <div class="table__column column-md">
-                <p>Objective</p>
-                <img src="./images/arrow.svg" alt="arrow">
-            </div>
+          <div class="table__column column-sm">
+            <input type="checkbox" />
+          </div>
+          <div class="table__column column-big">
+            <p>Learners</p>
+            <img src="/images/arrow.svg" alt="arrow" />
+          </div>
+          <div class="table__column column-md">
+            <p>Language</p>
+            <img src="/images/arrow.svg" alt="arrow" />
+          </div>
+          <div class="table__column column-md">
+            <p>Occupation</p>
+            <img src="/images/arrow.svg" alt="arrow" />
+          </div>
+          <div class="table__column column-md">
+            <p>Objective</p>
+            <img src="/images/arrow.svg" alt="arrow" />
+          </div>
 
-            <div class="table__column column-md">
-                <p>Subscription</p>
-                <img src="./images/arrow.svg" alt="arrow">
-            </div>
-            <div class="table__column column-big"></div>
+          <div class="table__column column-md">
+            <p>Subscription</p>
+            <img src="/images/arrow.svg" alt="arrow" />
+          </div>
+          <div class="table__column column-big"></div>
         </div>
 
-        <div class="table__content">
-            <div class="table__row">
+        <div class="table__container">
+          <template class="table__item-template">
+            <div class="table__content">
+              <div class="table__row">
                 <div class="table__column column-sm">
-                    <input type="checkbox"/>
+                  <input type="checkbox" />
                 </div>
                 <div class="table__column column-big">
-                    <img src="/images/avatarr.svg" alt="avatar">
-                    <div class="table__column column-info">
-                        <div class="column-info-names">
-                            <p>John Doe</p>
-                            <img src="./images/flag.svg" alt="flag">
-                        </div>
-                        <p>john.doe@gmail.com</p>
+                  <div class="table__avatar">
+                    <img
+                      src="/images/avatar.png"
+                      alt="avatar"
+                      class="avatar-items"
+                    />
+                  </div>
+                  <div class="table__column column-info">
+                    <div class="table__information">
+                      <p class="user__name">John Doe</p>
+                      <img src="/images/flag.svg" alt="flag" />
                     </div>
+                    <span class="user__email">john.doe@gmail.com</span>
+                  </div>
                 </div>
                 <div class="table__column column-md">
-                    <p>English</p>
+                  <p class="column-sm text-middle user__language">English</p>
                 </div>
                 <div class="table__column column-md">
-                    <p>Freelance</p>
+                  <p class="column-sm text-middle user__occupation">
+                    Freelance
+                  </p>
                 </div>
                 <div class="table__column column-md">
-                    <p>Fluent</p>
+                  <p class="column-sm text-middle user__objective">Fluent</p>
                 </div>
                 <div class="table__column column-md">
-                    <p>Free Trial</p>
+                  <p class="column-sm text-middle user__subscription">
+                    Free Trial
+                  </p>
                 </div>
                 <div class="table__column column-big">
-                    <div class="table__column action-item">
-                        <img src="/images/trash.svg" alt="trash">
-                        <img src="/images/edit.png" alt="edit">
-                    </div>
+                  <div class="table__column action-item">
+                    <button data-modal="modalDelete" class="button-modal">
+                      <img src="/images/trash.svg" alt="trash" />
+                    </button>
+                    <img src="/images/edit.svg" alt="edit" />
+                  </div>
                 </div>
+              </div>
             </div>
+          </template>
         </div>
 
         <div class="table__footer pagination">
-            <button class="pagination__button">
-                <span>Previous</span>
-            </button>
-            <p class="pagination__text">Page 1 of 10</p>
-            <button class="pagination__button">
-                <span>Next</span>
-            </button>
+          <button class="pagination__button">
+            <span>Previous</span>
+          </button>
+          <p class="pagination__text">Page 1 of 10</p>
+          <button class="pagination__button">
+            <span>Next</span>
+          </button>
         </div>
+      </div>
+    </section>
+
+    <div id="mdlFilter" class="modal filter__modal">
+      <div class="filter__content">
+        <div class="filter__title">
+          <p>Filter learners</p>
+          <button class="close-modal filter__close">
+            <img src="/images/closed.svg" alt="close" />
+          </button>
+        </div>
+        <div class="filters__parameters">
+          <div class="filter__options">
+            <p>Country</p>
+            <select name="country" id="country">
+              <option value="">All country</option>
+              <option value="">Russia</option>
+              <option value="">United States</option>
+              <option value="">Japan</option>
+            </select>
+          </div>
+          <div class="filter__set">
+            <div class="filter__items">
+              <p>Language</p>
+              <div class="filter__category">
+                <div class="filter__item">
+                  <input type="checkbox" name="language" />
+                  <label for="">English</label>
+                </div>
+                <div class="filter__item">
+                  <input type="checkbox" name="language" />
+                  <label for="">Franch</label>
+                </div>
+                <div class="filter__item">
+                  <input type="checkbox" name="language" />
+                  <label for="">Franch</label>
+                </div>
+              </div>
+            </div>
+            <div class="filter__items">
+              <p>Objective</p>
+              <div class="filter__category filer-exception">
+                <div class="filter__item">
+                  <input type="checkbox" name="Objective" />
+                  <label for="">Mastery</label>
+                </div>
+                <div class="filter__item">
+                  <input type="checkbox" name="Objective" />
+                  <label for="">Speaking</label>
+                </div>
+              </div>
+            </div>
+            <div class="filter__items">
+              <p>Occupation</p>
+              <div class="filter__category filer-exception">
+                <div class="filter__item">
+                  <input type="checkbox" name="Occupation" />
+                  <label for="">Freelancer</label>
+                </div>
+                <div class="filter__item">
+                  <input type="checkbox" name="Occupation" />
+                  <label for="">Employee</label>
+                </div>
+                <div class="filter__item">
+                  <input type="checkbox" name="Occupation" />
+                  <label for="">Teacher</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="filter__button">Apply</button>
+      </div>
     </div>
-</section>
-</body>
+
+    <div id="userModal" class="modal user__modal">
+      <div class="user__content">
+        <div class="user__info">
+          <div class="user__title">
+            <p>Add new user</p>
+            <button class="close-modal user__close">
+              <img src="/images/close.svg" alt="close" />
+            </button>
+          </div>
+        </div>
+        <div class="user__linear"></div>
+        <div class="user__form">
+          <div class="user__data">
+            <div class="user__parametrs user-right">
+              <p>First Name</p>
+              <input class="form__firstName" type="text" placeholder="Jhon" />
+            </div>
+            <div class="user__parametrs user-left">
+              <p>Last Name</p>
+              <input class="form__lastName" type="text" placeholder="Doe" />
+            </div>
+          </div>
+          <div class="user__data">
+            <div class="user__parametrs user-right">
+              <p>Email</p>
+              <input
+                class="form__email"
+                type="email"
+                placeholder="jhondoe@gmail.com"
+              />
+            </div>
+            <div class="user__parametrs user-left">
+              <p>Subscription</p>
+              <select class="form__subscription" name="" id="">
+                <option value="Free Trial">Free Trial</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Weekly">Weekly</option>
+              </select>
+            </div>
+          </div>
+          <div class="user__data">
+            <div class="user__parametrs user-right">
+              <p>Occupation</p>
+              <select class="form__occupation" name="" id="">
+                <option value="Freelancer">Freelancer</option>
+                <option value="Employee">Employee</option>
+                <option value="Teacher">Teacher</option>
+              </select>
+            </div>
+            <div class="user__parametrs user-left">
+              <p>Objective</p>
+              <select class="form__objective" name="" id="">
+                <option value="Mastery">Mastery</option>
+                <option value="Speaking">Speaking</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="user__button">
+          <div class="user__linear linear__start"></div>
+          <button class="user__btn">Save all</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalDelete" class="modal modalDelete">
+      <div class="modal__content">
+        <button class="close-modal modal__close">
+          <img src="/images/close.svg" alt="close" />
+        </button>
+        <div class="modal__info">
+          <img src="/images/attention.svg" alt="attention" />
+          <p>Are you sure want to delete this user?</p>
+        </div>
+        <div class="modal__buttons">
+          <button class="modal__button mdl-btn-right">
+            <span>Yes, I’m sure</span>
+          </button>
+          <button class="modal__button mdl-btn-left">
+            <span>No, cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
